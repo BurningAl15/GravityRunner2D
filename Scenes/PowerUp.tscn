@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccqsshi2hw2c5"]
+
+[ext_resource type="Texture2D" uid="uid://bd37anb42ehg3" path="res://Sprite/tilemap_packed.png" id="1_nc0ue"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1x7y"]
+atlas = ExtResource("1_nc0ue")
+region = Rect2(198, 126, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04hni"]
+atlas = ExtResource("1_nc0ue")
+region = Rect2(216, 126, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nc0ue"]
+atlas = ExtResource("1_nc0ue")
+region = Rect2(198, 126, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kk5lk"]
+atlas = ExtResource("1_nc0ue")
+region = Rect2(216, 126, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kk5lk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1x7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04hni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nc0ue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kk5lk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i1na4"]
+radius = 7.0
+
+[node name="PowerUp" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kk5lk")
+frame_progress = 0.21871518
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i1na4")
