@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf0cre84lmfe2"]
+
+[ext_resource type="PackedScene" uid="uid://y5oa5mtluof4" path="res://Scenes/Obstacle_Area.tscn" id="1_uh273"]
+
+[node name="Obstacle" type="StaticBody2D" groups=["Obstacle"]]
+
+[node name="Area2D" parent="." instance=ExtResource("1_uh273")]
