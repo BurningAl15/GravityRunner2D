@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://dh8v3fep1o8ax"]
+
+[ext_resource type="PackedScene" uid="uid://y5oa5mtluof4" path="res://Scenes/Obstacle_Area.tscn" id="1_12cdv"]
+[ext_resource type="Script" uid="uid://b1ufj4b21awxs" path="res://Scripts/fire_obstacle_area.gd" id="2_loq0v"]
+[ext_resource type="Texture2D" uid="uid://bg4f7phv4dldw" path="res://Sprite/PA_02/Traps/Fire/On (16x32).png" id="2_mw005"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_loq0v"]
+atlas = ExtResource("2_mw005")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ll01a"]
+atlas = ExtResource("2_mw005")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyh71"]
+atlas = ExtResource("2_mw005")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_84om8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_loq0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll01a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyh71")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12cdv"]
+size = Vector2(16, 32)
+
+[node name="FireObstacleArea" instance=ExtResource("1_12cdv")]
+script = ExtResource("2_loq0v")
+
+[node name="Sprite2D" parent="." index="0"]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_84om8")
+
+[node name="CollisionShape2D" parent="." index="2"]
+visible = false
+position = Vector2(0, 0)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="3"]
+shape = SubResource("RectangleShape2D_12cdv")

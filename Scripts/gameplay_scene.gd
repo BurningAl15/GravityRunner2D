@@ -18,3 +18,7 @@ func _process(delta):
 func _on_countdown_timer_timeout() -> void:
 	$CountdownTimer.stop()
 	$CountdownPanel.hide()
+
+
+func _on_obstacle_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

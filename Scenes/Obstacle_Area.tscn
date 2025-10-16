@@ -1,29 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://y5oa5mtluof4"]
+[gd_scene load_steps=3 format=3 uid="uid://y5oa5mtluof4"]
 
-[ext_resource type="Texture2D" uid="uid://bd37anb42ehg3" path="res://Sprite/tilemap_packed.png" id="1_qheme"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2sxyv"]
-atlas = ExtResource("1_qheme")
-region = Rect2(0, 18, 18, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1v7b5"]
-atlas = ExtResource("1_qheme")
-region = Rect2(0, 108, 18, 18)
+[ext_resource type="Texture2D" uid="uid://duygdals3egja" path="res://Sprite/PA_02/Traps/Spikes/Idle.png" id="1_qheme"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cithf"]
-size = Vector2(18, 36)
+size = Vector2(15, 11.75)
 
 [node name="ObstacleArea" type="Area2D" groups=["Obstacle"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -18)
-texture = SubResource("AtlasTexture_2sxyv")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = SubResource("AtlasTexture_1v7b5")
+position = Vector2(0, 1)
+texture = ExtResource("1_qheme")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -9)
+position = Vector2(-0.5, 3.875)
 shape = SubResource("RectangleShape2D_cithf")

@@ -1,0 +1,89 @@
+[gd_scene load_steps=14 format=3 uid="uid://b65pxrvdayoon"]
+
+[ext_resource type="PackedScene" uid="uid://y5oa5mtluof4" path="res://Scenes/Obstacle_Area.tscn" id="1_8kq0x"]
+[ext_resource type="Script" uid="uid://c4toqhbw6jwq0" path="res://Scripts/saw_obstacle_area.gd" id="2_7cti6"]
+[ext_resource type="Texture2D" uid="uid://eyateh8xwrvy" path="res://Sprite/PA_02/Traps/Saw/On (38x38).png" id="2_s4o5i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cti6"]
+atlas = ExtResource("2_s4o5i")
+region = Rect2(0, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yjms"]
+atlas = ExtResource("2_s4o5i")
+region = Rect2(38, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34yjp"]
+atlas = ExtResource("2_s4o5i")
+region = Rect2(76, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifs2g"]
+atlas = ExtResource("2_s4o5i")
+region = Rect2(114, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drdg2"]
+atlas = ExtResource("2_s4o5i")
+region = Rect2(152, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnfyc"]
+atlas = ExtResource("2_s4o5i")
+region = Rect2(190, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvhuq"]
+atlas = ExtResource("2_s4o5i")
+region = Rect2(228, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3gpr"]
+atlas = ExtResource("2_s4o5i")
+region = Rect2(266, 0, 38, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p7i26"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cti6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yjms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34yjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifs2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drdg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnfyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvhuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3gpr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u58ce"]
+radius = 20.0
+
+[node name="SawObstacleArea" instance=ExtResource("1_8kq0x")]
+script = ExtResource("2_7cti6")
+
+[node name="Sprite2D" parent="." index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_p7i26")
+frame_progress = 0.32933244
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="3"]
+shape = SubResource("CircleShape2D_u58ce")
