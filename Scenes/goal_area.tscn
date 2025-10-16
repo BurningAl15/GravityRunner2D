@@ -7,7 +7,7 @@ atlas = ExtResource("1_fh3lm")
 region = Rect2(18, 108, 18, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmleq"]
-size = Vector2(20, 162)
+size = Vector2(20, 270)
 
 [node name="GoalArea" type="Area2D" groups=["Goal"]]
 
@@ -35,6 +35,21 @@ texture_filter = 1
 position = Vector2(0, -72)
 texture = SubResource("AtlasTexture_ugxcw")
 
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -90)
+texture = SubResource("AtlasTexture_ugxcw")
+
+[node name="Sprite2D11" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -108)
+texture = SubResource("AtlasTexture_ugxcw")
+
+[node name="Sprite2D12" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -126)
+texture = SubResource("AtlasTexture_ugxcw")
+
 [node name="Sprite2D6" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, 18)
@@ -53,6 +68,21 @@ texture = SubResource("AtlasTexture_ugxcw")
 [node name="Sprite2D9" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(0, 72)
+texture = SubResource("AtlasTexture_ugxcw")
+
+[node name="Sprite2D13" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 90)
+texture = SubResource("AtlasTexture_ugxcw")
+
+[node name="Sprite2D14" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 108)
+texture = SubResource("AtlasTexture_ugxcw")
+
+[node name="Sprite2D15" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 126)
 texture = SubResource("AtlasTexture_ugxcw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
