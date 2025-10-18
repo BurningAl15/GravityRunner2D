@@ -30,7 +30,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12cdv"]
@@ -45,6 +45,8 @@ visible = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_84om8")
+autoplay = "default"
+frame_progress = 0.2299046
 
 [node name="CollisionShape2D" parent="." index="2"]
 visible = false

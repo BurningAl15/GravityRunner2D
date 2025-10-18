@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://v8hqtf3oxwya"]
+[gd_scene load_steps=19 format=4 uid="uid://v8hqtf3oxwya"]
 
 [ext_resource type="PackedScene" uid="uid://dbi6c0575bv3" path="res://Scenes/goal_area.tscn" id="1_qvqb5"]
 [ext_resource type="Script" uid="uid://bxdtx5yjelfpu" path="res://Scripts/gameplay_scene.gd" id="1_t5vvb"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://b8b0g74282cmf" path="res://Scripts/power_up.gd" id="9_uwf40"]
 [ext_resource type="Texture2D" uid="uid://bytvmscpbblri" path="res://Sprite/PA_02/Background/Gray.png" id="10_sjh0d"]
 [ext_resource type="AudioStream" uid="uid://bosql88ps17gt" path="res://Sounds/Background/BG.ogg" id="12_krv6g"]
+[ext_resource type="PackedScene" uid="uid://crgqnb6gs0kbm" path="res://Scenes/Indications.tscn" id="13_sjh0d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u0hpe"]
 texture = ExtResource("4_ykw5v")
@@ -426,39 +427,47 @@ position = Vector2(112.888885, 23.222225)
 [node name="FireObstacleArea" parent="CollisionTilemap" instance=ExtResource("6_u0hpe")]
 z_index = 5
 position = Vector2(1787.5555, 48.88889)
+script = null
 
 [node name="FireObstacleArea2" parent="CollisionTilemap" instance=ExtResource("6_u0hpe")]
 z_index = 5
 position = Vector2(2209.7778, 49.77778)
+script = null
 
 [node name="FireObstacleArea3" parent="CollisionTilemap" instance=ExtResource("6_u0hpe")]
 z_index = 5
 position = Vector2(2468.4443, 48)
+script = null
 
 [node name="SawObstacleArea5" parent="CollisionTilemap" instance=ExtResource("4_krv6g")]
 z_index = 5
 position = Vector2(2831.111, 56)
 scale = Vector2(0.8888889, 0.8888889)
+script = null
 
 [node name="SawObstacleArea" parent="CollisionTilemap" instance=ExtResource("4_krv6g")]
 z_index = 5
 position = Vector2(735.1111, 24.888895)
 scale = Vector2(0.8888889, 0.8888889)
+script = null
 
 [node name="SawObstacleArea2" parent="CollisionTilemap" instance=ExtResource("4_krv6g")]
 z_index = 5
 position = Vector2(1167.1111, 24.888884)
 scale = Vector2(0.8888889, 0.8888889)
+script = null
 
 [node name="SawObstacleArea3" parent="CollisionTilemap" instance=ExtResource("4_krv6g")]
 z_index = 5
 position = Vector2(1552.8889, 23.111113)
 scale = Vector2(0.8888889, 0.8888889)
+script = null
 
 [node name="SawObstacleArea4" parent="CollisionTilemap" instance=ExtResource("4_krv6g")]
 z_index = 5
 position = Vector2(2001.7778, 51.555557)
 scale = Vector2(0.8888889, 0.8888889)
+script = null
 
 [node name="CollisionTilemap2" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -500,40 +509,47 @@ position = Vector2(-128.88887, 56.000015)
 z_index = 5
 position = Vector2(2474.6667, 18.66645)
 scale = Vector2(0.8888889, 0.8888889)
+script = null
 
 [node name="FireObstacleArea2" parent="CollisionTilemap2" instance=ExtResource("6_u0hpe")]
 z_index = 5
 position = Vector2(1920, 18.6665)
 scale = Vector2(0.8888889, 0.8888889)
+script = null
 
 [node name="FireObstacleArea3" parent="CollisionTilemap2" instance=ExtResource("6_u0hpe")]
 z_index = 5
 position = Vector2(1527.1111, 18.666534)
 scale = Vector2(0.8888889, 0.8888889)
+script = null
 
 [node name="SawObstacleArea6" parent="CollisionTilemap2" instance=ExtResource("4_krv6g")]
 z_index = 5
 position = Vector2(48, 63.1111)
 rotation = 3.1415925
 scale = Vector2(0.8888889, 0.8888889)
+script = null
 
 [node name="SawObstacleArea7" parent="CollisionTilemap2" instance=ExtResource("4_krv6g")]
 z_index = 5
 position = Vector2(463.1111, 63.11107)
 rotation = 3.1415925
 scale = Vector2(0.8888889, 0.8888889)
+script = null
 
 [node name="SawObstacleArea8" parent="CollisionTilemap2" instance=ExtResource("4_krv6g")]
 z_index = 5
 position = Vector2(906.6667, 64.88881)
 rotation = 3.1415925
 scale = Vector2(0.8888889, 0.8888889)
+script = null
 
 [node name="SawObstacleArea9" parent="CollisionTilemap2" instance=ExtResource("4_krv6g")]
 z_index = 5
 position = Vector2(1135.1112, 30.222128)
 rotation = 3.1415925
 scale = Vector2(0.8888889, 0.8888889)
+script = null
 
 [node name="Player" parent="." instance=ExtResource("2_yjxey")]
 script = ExtResource("3_m8blu")
@@ -607,6 +623,9 @@ position = Vector2(2933, 5)
 script = ExtResource("9_uwf40")
 
 [node name="CountdownAudio" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Indications" parent="." instance=ExtResource("13_sjh0d")]
+position = Vector2(202, 0)
 
 [connection signal="body_entered" from="GoalArea" to="Player" method="_on_goal_area_body_entered"]
 [connection signal="body_entered" from="CollisionTilemap/Obstacle17" to="Player" method="_on_obstacle_body_entered"]

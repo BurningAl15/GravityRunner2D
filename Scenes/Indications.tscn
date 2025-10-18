@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://crgqnb6gs0kbm"]
+
+[ext_resource type="Texture2D" uid="uid://pni3xxxg2ngi" path="res://Sprite/Indications/mouse_outline.png" id="1_b3ab0"]
+[ext_resource type="Texture2D" uid="uid://uvp21riavonn" path="res://Sprite/Indications/mouse_left_outline.png" id="2_d4rdk"]
+[ext_resource type="Texture2D" uid="uid://dd2brpn1oaxth" path="res://Sprite/Indications/keyboard_space_outline.png" id="3_0x8u5"]
+[ext_resource type="Texture2D" uid="uid://dnc6c2n407yu2" path="res://Sprite/Indications/keyboard_space.png" id="4_bly5u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m2gb2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_b3ab0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d4rdk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ulf7d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0x8u5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bly5u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Indications" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -4
+texture_filter = 1
+position = Vector2(40, 0)
+sprite_frames = SubResource("SpriteFrames_m2gb2")
+autoplay = "default"
+frame_progress = 0.3513383
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+z_index = -4
+texture_filter = 1
+position = Vector2(-41, 0)
+sprite_frames = SubResource("SpriteFrames_ulf7d")
+autoplay = "default"
+frame_progress = 0.6538778
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = -19.0
+offset_top = -11.0
+offset_right = 21.0
+offset_bottom = 12.0
+text = "O"
+horizontal_alignment = 1

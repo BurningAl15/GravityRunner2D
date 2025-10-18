@@ -83,6 +83,7 @@ visible = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_p7i26")
+autoplay = "default"
 frame_progress = 0.32933244
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="3"]

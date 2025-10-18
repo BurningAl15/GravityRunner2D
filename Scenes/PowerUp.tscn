@@ -137,6 +137,7 @@ radius = 7.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_kk5lk")
+autoplay = "default"
 frame_progress = 0.3672427
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
