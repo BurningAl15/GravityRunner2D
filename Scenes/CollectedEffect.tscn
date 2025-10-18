@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://bao06opra75tf"]
+
+[ext_resource type="Texture2D" uid="uid://buv7888hohqe4" path="res://Sprite/PA_02/Items/Fruits/Collected.png" id="1_gam4x"]
+[ext_resource type="Script" uid="uid://mylf8tjlq76t" path="res://Scripts/collected_effect.gd" id="1_ns6s8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns6s8"]
+atlas = ExtResource("1_gam4x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ro74"]
+atlas = ExtResource("1_gam4x")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a14ta"]
+atlas = ExtResource("1_gam4x")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0gse"]
+atlas = ExtResource("1_gam4x")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqcjy"]
+atlas = ExtResource("1_gam4x")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpilg"]
+atlas = ExtResource("1_gam4x")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bgiy3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns6s8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ro74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a14ta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0gse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqcjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpilg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 18.0
+}]
+
+[node name="CollectedEffect" type="Node2D"]
+script = ExtResource("1_ns6s8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_bgiy3")
+frame_progress = 0.4650731
+
+[node name="LifeTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="LifeTimer" to="." method="_on_LifeTimer_timeout"]

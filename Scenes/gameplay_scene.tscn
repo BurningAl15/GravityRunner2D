@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://v8hqtf3oxwya"]
+[gd_scene load_steps=18 format=4 uid="uid://v8hqtf3oxwya"]
 
 [ext_resource type="PackedScene" uid="uid://dbi6c0575bv3" path="res://Scenes/goal_area.tscn" id="1_qvqb5"]
 [ext_resource type="Script" uid="uid://bxdtx5yjelfpu" path="res://Scripts/gameplay_scene.gd" id="1_t5vvb"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ccqsshi2hw2c5" path="res://Scenes/PowerUp.tscn" id="8_6ksri"]
 [ext_resource type="Script" uid="uid://b8b0g74282cmf" path="res://Scripts/power_up.gd" id="9_uwf40"]
 [ext_resource type="Texture2D" uid="uid://bytvmscpbblri" path="res://Sprite/PA_02/Background/Gray.png" id="10_sjh0d"]
+[ext_resource type="AudioStream" uid="uid://bosql88ps17gt" path="res://Sounds/Background/BG.ogg" id="12_krv6g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u0hpe"]
 texture = ExtResource("4_ykw5v")
@@ -546,6 +547,10 @@ limit_bottom = 110
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
+[node name="EnvironmentAudio" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("12_krv6g")
+autoplay = true
+
 [node name="CountdownTimer" type="Timer" parent="."]
 
 [node name="PowerUpTimer" type="Timer" parent="."]
@@ -600,6 +605,8 @@ script = ExtResource("9_uwf40")
 [node name="PowerUp6" parent="." instance=ExtResource("8_6ksri")]
 position = Vector2(2933, 5)
 script = ExtResource("9_uwf40")
+
+[node name="CountdownAudio" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="body_entered" from="GoalArea" to="Player" method="_on_goal_area_body_entered"]
 [connection signal="body_entered" from="CollisionTilemap/Obstacle17" to="Player" method="_on_obstacle_body_entered"]

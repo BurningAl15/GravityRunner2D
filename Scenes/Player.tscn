@@ -191,3 +191,5 @@ frame_progress = 0.75872815
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_rpqav")
+
+[node name="sfx_sound" type="AudioStreamPlayer2D" parent="."]
